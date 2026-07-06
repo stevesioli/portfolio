@@ -59,7 +59,7 @@ export function Navbar() {
         <div className="hidden items-center gap-2 md:flex">
           <ThemeToggle />
           <Button asChild size="sm">
-            <a href="/resume/steve-sioli-resume.pdf" download>
+            <a href="resume/steve-sioli-resume.pdf" download>
               <DownloadIcon className="size-4" />
               Résumé
             </a>
@@ -83,7 +83,7 @@ export function Navbar() {
               </nav>
               <div className="mt-auto px-4 pb-4">
                 <Button asChild className="w-full">
-                  <a href="/resume/steve-sioli-resume.pdf" download>
+                  <a href="resume/steve-sioli-resume.pdf" download>
                     <DownloadIcon className="size-4" />
                     Download résumé
                   </a>

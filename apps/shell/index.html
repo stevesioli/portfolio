@@ -2,6 +2,13 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <!--
+      Resolves every relative URL (images, the résumé PDF, etc.) against
+      the deployed base path, so the same build works at a domain root
+      or a hosting subpath (e.g. GitHub Pages project pages). Vite
+      substitutes %BASE_URL% with the configured `base` at build time.
+    -->
+    <base href="%BASE_URL%" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="color-scheme" content="dark light" />
     <title>Steve Sioli — Staff Frontend Engineer</title>
@@ -15,7 +22,7 @@
       content="Interactive resume: frontend platform architecture, design systems, and scalable UI engineering."
     />
     <meta property="og:type" content="website" />
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   </head>
   <body>
     <div id="root"></div>

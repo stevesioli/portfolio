@@ -1,6 +1,18 @@
 @import 'tailwindcss';
 
 /*
+ * Tailwind v4 excludes `node_modules` from its automatic template
+ * scan. Every app in this monorepo consumes @resume/ui as a pnpm
+ * workspace package (symlinked into node_modules), so without these
+ * explicit `@source` directives the utility classes used *inside* the
+ * shared components below would never be generated and every app
+ * would render them unstyled.
+ */
+@source "../components/**/*.tsx";
+@source "../theme/**/*.tsx";
+@source "../motion/**/*.tsx";
+
+/*
  * Shared design tokens for the resume site's custom shadcn/ui theme.
  * "Editorial, minimal, dark-first" — a near-black canvas, a warm
  * off-white reading color, and a single restrained copper/amber accent.
