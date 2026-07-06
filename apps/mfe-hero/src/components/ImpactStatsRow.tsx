@@ -1,9 +1,6 @@
-import { ClockIcon, GaugeIcon, GlobeIcon, TrendingDownIcon, type LucideIcon } from 'lucide-react';
 import { CountUp, StaggerGroup, StaggerItem } from '@resume/ui';
 
 import { IMPACT_STATS } from '../content';
-
-const ICONS: LucideIcon[] = [TrendingDownIcon, GaugeIcon, ClockIcon, GlobeIcon];
 
 /** Alternates the two accent colors across the row so both show up together. */
 const ACCENTS = ['primary', 'accent-blue', 'primary', 'accent-blue'] as const;
@@ -12,7 +9,7 @@ export function ImpactStatsRow({ className }: { className?: string }) {
   return (
     <StaggerGroup className={`grid gap-4 sm:grid-cols-2 lg:grid-cols-4 ${className ?? ''}`}>
       {IMPACT_STATS.map((stat, index) => {
-        const Icon = ICONS[index % ICONS.length];
+        const Icon = stat.icon;
         const accent = ACCENTS[index % ACCENTS.length];
         const isBlue = accent === 'accent-blue';
 

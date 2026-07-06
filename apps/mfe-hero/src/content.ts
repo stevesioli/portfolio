@@ -1,4 +1,7 @@
+import { ClockIcon, GaugeIcon, GlobeIcon, TrendingDownIcon, type LucideIcon } from 'lucide-react';
 import type { ImpactStat } from '@resume/ui';
+
+export type ImpactStatWithIcon = ImpactStat & { icon: LucideIcon };
 
 export const NAME = 'Steve Sioli';
 export const TITLE = 'Staff Frontend Engineer';
@@ -22,11 +25,19 @@ export const PULL_QUOTE =
   'I build the platforms other engineers build on top of — component systems, ' +
   'design systems, and shared architecture that make everyone else faster.';
 
-export const IMPACT_STATS: ImpactStat[] = [
+export const IMPACT_STATS: ImpactStatWithIcon[] = [
+  {
+    value: 15,
+    suffix: '+ yrs',
+    icon: ClockIcon,
+    label: 'frontend platform experience',
+    description: 'Enterprise and high-scale environments, from Amazon to General Motors.',
+  },
   {
     value: 40,
     prefix: '~',
     suffix: '%',
+    icon: TrendingDownIcon,
     label: 'less redundant front-end work',
     description:
       'Introduced a shared component architecture adopted across multiple digital initiatives.',
@@ -35,18 +46,14 @@ export const IMPACT_STATS: ImpactStat[] = [
     value: 80,
     prefix: '~',
     suffix: '%',
+    icon: GaugeIcon,
     label: 'faster page performance',
     description: 'Re-architected a legacy vehicle locator into a single-page application.',
   },
   {
-    value: 15,
-    suffix: '+ yrs',
-    label: 'frontend platform experience',
-    description: 'Enterprise and high-scale environments, from Amazon to General Motors.',
-  },
-  {
     value: 275,
     suffix: '+',
+    icon: GlobeIcon,
     label: 'global brand sites supported',
     description: 'Contributed to the CMS platform architecture powering GM’s global brand portfolio.',
   },
