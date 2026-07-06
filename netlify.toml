@@ -1,0 +1,9 @@
+[build]
+  command = "corepack enable && pnpm install --frozen-lockfile && pnpm build"
+  publish = "apps/shell/dist"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+# Single-page, anchor-based navigation — no client-side router, so no
+# SPA fallback/redirect rules are required.

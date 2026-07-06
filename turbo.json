@@ -7,6 +7,33 @@
       "outputs": ["dist/**"],
       "inputs": ["src/**", "public/**", "index.html", "vite.config.ts", "tsconfig*.json"]
     },
+    "shell#build": {
+      "dependsOn": [
+        "^build",
+        "mfe-hero#build",
+        "mfe-experience#build",
+        "mfe-skills#build",
+        "mfe-education#build",
+        "mfe-contact#build"
+      ],
+      "outputs": ["dist/**"],
+      "inputs": ["src/**", "public/**", "index.html", "vite.config.ts", "tsconfig*.json"]
+    },
+    "mfe-hero#build": {
+      "outputs": ["dist/**", "../shell/public/remotes/hero/**"]
+    },
+    "mfe-experience#build": {
+      "outputs": ["dist/**", "../shell/public/remotes/experience/**"]
+    },
+    "mfe-skills#build": {
+      "outputs": ["dist/**", "../shell/public/remotes/skills/**"]
+    },
+    "mfe-education#build": {
+      "outputs": ["dist/**", "../shell/public/remotes/education/**"]
+    },
+    "mfe-contact#build": {
+      "outputs": ["dist/**", "../shell/public/remotes/contact/**"]
+    },
     "dev": {
       "cache": false,
       "persistent": true
