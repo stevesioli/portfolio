@@ -18,7 +18,7 @@ import HeroPhotoPanel from './variants/HeroPhotoPanel';
  * should come out — this is a temporary comparison harness, not the
  * intended long-term shape of this component.
  */
-const VARIANT: 'chips' | 'panel' | 'inline' = 'chips';
+const VARIANT: 'chips' | 'panel' | 'inline' = 'inline';
 
 const VARIANTS = {
   chips: HeroPhotoChips,
