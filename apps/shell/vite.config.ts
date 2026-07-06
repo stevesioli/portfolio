@@ -9,12 +9,19 @@ import { federation } from '@module-federation/vite';
 // final `dist/` folder is a single, self-contained static bundle that
 // can be deployed to any static host — no separately hosted remotes
 // required, even though each section really is an independent build.
-const REMOTE_SLUGS = {
-  mfeHero: 'hero',
-  mfeExperience: 'experience',
-  mfeSkills: 'skills',
-  mfeEducation: 'education',
-  mfeContact: 'contact',
+//
+// That build-time copy only exists after `vite build`, though. In dev
+// (`vite` / `pnpm dev`), nothing writes to public/remotes/* — each
+// remote instead runs its own standalone dev server (see each mfe-*'s
+// `server.port`) and serves its federated module straight from there.
+// So in dev mode we point the host at each remote's live dev server
+// instead of the (nonexistent, in dev) copied-into-public path.
+const REMOTES = {
+  mfeHero: { slug: 'hero', devPort: 5174 },
+  mfeExperience: { slug: 'experience', devPort: 5175 },
+  mfeSkills: { slug: 'skills', devPort: 5176 },
+  mfeEducation: { slug: 'education', devPort: 5177 },
+  mfeContact: { slug: 'contact', devPort: 5178 },
 } as const;
 
 const SHARED = {
@@ -26,6 +33,7 @@ export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '');
   const basePath = env.VITE_BASE_PATH?.trim() || '/';
   const remoteBase = `${basePath}remotes`.replace(/\/{2,}/g, '/');
+  const isDev = mode === 'development';
 
   return {
     base: basePath,
@@ -35,12 +43,14 @@ export default defineConfig(({ mode }) => {
       federation({
         name: 'shell',
         remotes: Object.fromEntries(
-          Object.entries(REMOTE_SLUGS).map(([name, slug]) => [
+          Object.entries(REMOTES).map(([name, { slug, devPort }]) => [
             name,
             {
               type: 'module' as const,
               name,
-              entry: `${remoteBase}/${slug}/remoteEntry.js`,
+              entry: isDev
+                ? `http://localhost:${devPort}/remoteEntry.js`
+                : `${remoteBase}/${slug}/remoteEntry.js`,
             },
           ]),
         ),

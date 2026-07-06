@@ -31,8 +31,12 @@ export default defineConfig({
   },
   server: {
     port: 5178,
+    // The shell's dev server (a different origin/port) fetches this
+    // remote's remoteEntry.js and exposed chunks directly at dev time.
+    cors: true,
   },
   preview: {
     port: 5178,
+    cors: true,
   },
 });
