@@ -1,0 +1,55 @@
+import type { ImpactStat } from '@resume/ui';
+
+export const NAME = 'Steve Sioli';
+export const TITLE = 'Staff Frontend Engineer';
+export const KICKER = 'Staff Frontend Engineer · Platform & UI Architecture';
+
+export const SUMMARY =
+  'Staff Frontend Platform Engineer with 15+ years architecting and building scalable ' +
+  'frontend platforms and UI ecosystems across enterprise and high-scale environments. ' +
+  'Known for designing reusable component systems, improving developer velocity, and ' +
+  'delivering performant React and TypeScript applications — and for building ' +
+  'multi-tenant platforms, unified design systems, and shared component libraries that ' +
+  'accelerate product development.';
+
+/**
+ * Short editorial statement used only by the "inline" hero layout
+ * variant, standing in for the photo column it frees up. Original
+ * copy written to match resume tone — worth a quick read-through
+ * before shipping it as a standing personal tagline.
+ */
+export const PULL_QUOTE =
+  'I build the platforms other engineers build on top of — component systems, ' +
+  'design systems, and shared architecture that make everyone else faster.';
+
+export const IMPACT_STATS: ImpactStat[] = [
+  {
+    value: '~40%',
+    label: 'less redundant front-end work',
+    description:
+      'Introduced a shared component architecture adopted across multiple digital initiatives.',
+  },
+  {
+    value: '~80%',
+    label: 'faster page performance',
+    description: 'Re-architected a legacy vehicle locator into a single-page application.',
+  },
+  {
+    value: '15+ yrs',
+    label: 'frontend platform experience',
+    description: 'Enterprise and high-scale environments, from Amazon to General Motors.',
+  },
+  {
+    value: '275+',
+    label: 'global brand sites supported',
+    description: 'Contributed to the CMS platform architecture powering GM’s global brand portfolio.',
+  },
+];
+
+export const CORE_TAGS = [
+  'Design Systems',
+  'Component Platforms',
+  'React & TypeScript',
+  'Multi-Tenant UI',
+  'Monorepo Strategy',
+];
