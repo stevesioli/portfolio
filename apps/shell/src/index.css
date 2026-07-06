@@ -1,0 +1,19 @@
+@import '@fontsource-variable/inter';
+@import '@fontsource-variable/fraunces';
+@import '@fontsource-variable/jetbrains-mono';
+@import '@resume/ui/styles/theme.css';
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+::selection {
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+}
