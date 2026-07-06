@@ -1,0 +1,31 @@
+/*
+ * Plain CSS, deliberately NOT Tailwind utilities, for the timeline's
+ * rail and dots.
+ *
+ * Why: every micro-frontend (and the shell) compiles its own
+ * independent Tailwind build, and every one of those builds emits an
+ * identical, unscoped `.hidden { display: none }` rule (it's used
+ * everywhere — nav toggles, etc.). When several of those stylesheets
+ * land in the same document, the *last one inserted* wins any tie
+ * against another bundle's `sm:block` override, since both rules have
+ * equal specificity and Tailwind's mobile-first ordering guarantee
+ * only holds within a single stylesheet, not across several
+ * independently-built ones. In the standalone dev harness there's
+ * only one stylesheet, so it always looked correct there.
+ *
+ * Unique, hand-written class names side-step the problem entirely —
+ * no other bundle will ever emit a rule for `.timeline-rail` or
+ * `.timeline-dot`, so there's nothing for it to collide with.
+ */
+
+.timeline-rail,
+.timeline-dot {
+  display: none;
+}
+
+@media (min-width: 640px) {
+  .timeline-rail,
+  .timeline-dot {
+    display: block;
+  }
+}

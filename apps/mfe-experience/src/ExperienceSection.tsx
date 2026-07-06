@@ -1,6 +1,7 @@
 import { Badge, Reveal, StaggerGroup, StaggerItem, type ExperienceEntry } from '@resume/ui';
 
 import '@resume/ui/styles/theme.css';
+import './timeline.css';
 
 const EXPERIENCE: ExperienceEntry[] = [
   {
@@ -73,14 +74,14 @@ export default function ExperienceSection() {
       <div role="list" className="relative">
         <div
           aria-hidden
-          className="bg-border absolute top-2 bottom-2 left-[7px] hidden w-px sm:block"
+          className="timeline-rail bg-border absolute top-2 bottom-2 left-[7px] w-px"
         />
         <StaggerGroup className="space-y-10 sm:space-y-12">
           {EXPERIENCE.map((entry) => (
             <StaggerItem key={entry.id} role="listitem" className="relative sm:pl-10">
               <span
                 aria-hidden
-                className="bg-primary absolute top-2 left-0 hidden size-[15px] rounded-full ring-4 ring-background sm:block"
+                className="timeline-dot bg-primary absolute top-2 left-0 size-[15px] rounded-full ring-4 ring-background"
               />
 
               <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
