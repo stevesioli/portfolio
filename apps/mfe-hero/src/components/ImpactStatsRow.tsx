@@ -23,27 +23,21 @@ export function ImpactStatsRow({ className }: { className?: string }) {
               {/* Oversized watermark icon for depth */}
               <Icon
                 aria-hidden
-                className={`absolute -top-3 -right-3 size-20 rotate-6 opacity-[0.07] transition-transform duration-300 group-hover:scale-110 ${
+                className={`absolute -top-6 -right-6 size-36 rotate-6 opacity-[0.07] transition-transform duration-300 group-hover:scale-110 ${
                   isBlue ? 'text-accent-blue' : 'text-primary'
                 }`}
               />
 
-              <div
-                className={`relative mb-3 flex size-9 items-center justify-center rounded-lg ${
-                  isBlue ? 'bg-accent-blue/10 text-accent-blue' : 'bg-primary/10 text-primary'
-                }`}
-              >
-                <Icon className="size-4.5" />
-              </div>
-
               <p
-                className={`relative font-serif text-4xl font-semibold tracking-tight sm:text-5xl ${
+                className={`relative flex items-start font-serif font-semibold tracking-tight ${
                   isBlue ? 'text-accent-blue' : 'text-primary'
                 }`}
               >
-                {stat.prefix}
-                <CountUp value={stat.value} />
-                {stat.suffix}
+                {stat.prefix && <span className="text-xl sm:text-2xl">{stat.prefix}</span>}
+                <span className="text-6xl leading-none sm:text-7xl">
+                  <CountUp value={stat.value} />
+                </span>
+                {stat.suffix && <span className="text-xl sm:text-2xl">{stat.suffix}</span>}
               </p>
               <p className="relative mt-2 text-sm font-medium">{stat.label}</p>
               <p className="text-muted-foreground relative mt-2 text-xs leading-relaxed">

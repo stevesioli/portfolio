@@ -5,7 +5,7 @@ export type ImpactStatWithIcon = ImpactStat & { icon: LucideIcon };
 
 export const NAME = 'Steve Sioli';
 export const TITLE = 'Staff Frontend Engineer';
-export const KICKER = 'Staff Frontend Engineer · Platform & UI Architecture';
+export const KICKER = `Staff Frontend Engineer\nPlatform & UI Architecture`;
 
 export const SUMMARY =
   'Staff Frontend Platform Engineer with 15+ years architecting and building scalable ' +
@@ -35,7 +35,6 @@ export const IMPACT_STATS: ImpactStatWithIcon[] = [
   },
   {
     value: 40,
-    prefix: '~',
     suffix: '%',
     icon: TrendingDownIcon,
     label: 'less redundant front-end work',
@@ -44,7 +43,6 @@ export const IMPACT_STATS: ImpactStatWithIcon[] = [
   },
   {
     value: 80,
-    prefix: '~',
     suffix: '%',
     icon: GaugeIcon,
     label: 'faster page performance',
@@ -60,9 +58,8 @@ export const IMPACT_STATS: ImpactStatWithIcon[] = [
 ];
 
 export const CORE_TAGS = [
-  'Design Systems',
-  'Component Platforms',
   'React & TypeScript',
+  'Component Platforms',
   'Multi-Tenant UI',
-  'Monorepo Strategy',
+  'Design Systems',
 ];
