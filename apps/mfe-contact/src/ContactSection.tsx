@@ -65,7 +65,7 @@ export default function ContactSection() {
   return (
     <div className="grid gap-10 lg:grid-cols-[1fr_1.3fr]">
       <Reveal>
-        <Badge variant="accent" className="mb-4">
+        <Badge variant="blue" className="mb-4">
           Open to new opportunities
         </Badge>
         <p className="text-muted-foreground max-w-md leading-relaxed">

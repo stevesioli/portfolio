@@ -12,11 +12,12 @@ import {
 
 import '@resume/ui/styles/theme.css';
 
-const SKILL_CATEGORIES: (SkillCategory & { icon: typeof LayersIcon })[] = [
+const SKILL_CATEGORIES: (SkillCategory & { icon: typeof LayersIcon; accent: 'copper' | 'blue' })[] = [
   {
     id: 'architecture',
     title: 'Frontend Platform Architecture',
     icon: LayersIcon,
+    accent: 'copper',
     skills: [
       'Design systems',
       'Component libraries',
@@ -30,6 +31,7 @@ const SKILL_CATEGORIES: (SkillCategory & { icon: typeof LayersIcon })[] = [
     id: 'leadership',
     title: 'Leadership & Influence',
     icon: UsersIcon,
+    accent: 'copper',
     skills: [
       'Technical roadmapping',
       'Cross-team alignment',
@@ -42,6 +44,7 @@ const SKILL_CATEGORIES: (SkillCategory & { icon: typeof LayersIcon })[] = [
     id: 'technologies',
     title: 'Technologies',
     icon: CodeIcon,
+    accent: 'blue',
     skills: [
       'React',
       'TypeScript',
@@ -68,7 +71,13 @@ export default function SkillsSection() {
           <StaggerItem key={category.id}>
             <Card className="h-full">
               <CardHeader>
-                <div className="bg-primary/10 text-primary mb-2 flex size-9 items-center justify-center rounded-lg">
+                <div
+                  className={
+                    category.accent === 'blue'
+                      ? 'bg-accent-blue/10 text-accent-blue mb-2 flex size-9 items-center justify-center rounded-lg'
+                      : 'bg-primary/10 text-primary mb-2 flex size-9 items-center justify-center rounded-lg'
+                  }
+                >
                   <Icon className="size-4.5" />
                 </div>
                 <CardTitle>{category.title}</CardTitle>

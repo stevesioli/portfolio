@@ -15,7 +15,11 @@
 /*
  * Shared design tokens for the resume site's custom shadcn/ui theme.
  * "Editorial, minimal, dark-first" — a near-black canvas, a warm
- * off-white reading color, and a single restrained copper/amber accent.
+ * off-white reading color, a restrained copper/amber primary accent,
+ * and a second, deliberately sparing pop: a muted sky/denim blue
+ * (oklch hue ~224) sampled directly from the plaid shirt in the
+ * headshot photo (see --accent-blue below), used only in a handful of
+ * places that sit near the photo or call out something worth noticing.
  *
  * Every micro-frontend imports this file directly so the shell and all
  * federated remotes render from one visual source of truth, even
@@ -44,6 +48,9 @@
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
 
+  --color-accent-blue: var(--accent-blue);
+  --color-accent-blue-foreground: var(--accent-blue-foreground);
+
   --color-destructive: var(--destructive);
   --color-destructive-foreground: var(--destructive-foreground);
 
@@ -64,7 +71,7 @@
 :root {
   --radius: 0.625rem;
 
-  /* Light mode — warm paper tone, deep copper accent for contrast */
+  /* Light mode — warm paper tone, deep copper primary accent for contrast */
   --background: oklch(0.99 0.004 90);
   --foreground: oklch(0.16 0.006 90);
 
@@ -86,6 +93,10 @@
   --accent: oklch(0.93 0.03 65);
   --accent-foreground: oklch(0.22 0.02 60);
 
+  /* Second accent — sampled-shirt blue, used sparingly */
+  --accent-blue: oklch(0.55 0.13 224);
+  --accent-blue-foreground: oklch(0.99 0.004 90);
+
   --destructive: oklch(0.55 0.21 27);
   --destructive-foreground: oklch(0.99 0 0);
 
@@ -95,7 +106,7 @@
 }
 
 .dark {
-  /* Dark mode — near-black editorial canvas, warm amber accent */
+  /* Dark mode — near-black editorial canvas, warm amber primary accent */
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.97 0.006 90);
 
@@ -116,6 +127,10 @@
 
   --accent: oklch(0.27 0.03 65);
   --accent-foreground: oklch(0.95 0.02 80);
+
+  /* Second accent — sampled-shirt blue, used sparingly */
+  --accent-blue: oklch(0.72 0.11 224);
+  --accent-blue-foreground: oklch(0.145 0 0);
 
   --destructive: oklch(0.62 0.2 25);
   --destructive-foreground: oklch(0.97 0 0);

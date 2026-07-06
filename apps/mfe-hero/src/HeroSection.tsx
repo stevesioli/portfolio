@@ -112,9 +112,9 @@ export default function HeroSection() {
           <div className="relative">
             <div
               aria-hidden
-              className="from-primary/40 absolute -inset-4 -z-10 rounded-full bg-gradient-to-br to-transparent blur-2xl"
+              className="from-accent-blue/40 via-primary/25 absolute -inset-4 -z-10 rounded-full bg-gradient-to-br to-transparent blur-2xl"
             />
-            <Avatar className="border-border/60 size-40 border-4 shadow-lg sm:size-52">
+            <Avatar className="border-accent-blue/30 size-40 border-4 shadow-lg sm:size-52">
               <AvatarImage src="images/steve-sioli.jpg" alt="Steve Sioli" className="object-cover" />
               <AvatarFallback className="font-serif text-4xl">SS</AvatarFallback>
             </Avatar>
