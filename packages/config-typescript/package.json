@@ -1,0 +1,7 @@
+{
+  "name": "@resume/config-typescript",
+  "version": "0.0.0",
+  "private": true,
+  "license": "MIT",
+  "files": ["base.json", "vite-library.json"]
+}

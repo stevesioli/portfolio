@@ -1,0 +1,29 @@
+{
+  "name": "steve-sioli-resume",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Interactive, micro-frontend resume site for Steve Sioli — Staff Frontend Engineer.",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22.0.0",
+    "pnpm": ">=11.0.0"
+  },
+  "packageManager": "pnpm@11.9.0",
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "build:remotes": "turbo run build --filter='./apps/mfe-*'",
+    "build:shell": "turbo run build --filter=shell",
+    "lint": "turbo run lint",
+    "type-check": "turbo run type-check",
+    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md,css}\" --ignore-unknown",
+    "format:check": "prettier --check \"**/*.{ts,tsx,js,jsx,json,md,css}\" --ignore-unknown",
+    "clean": "turbo run clean && rm -rf node_modules",
+    "preview": "pnpm --filter shell preview"
+  },
+  "devDependencies": {
+    "turbo": "^2.5.0",
+    "prettier": "^3.4.0",
+    "typescript": "^5.7.0"
+  }
+}
