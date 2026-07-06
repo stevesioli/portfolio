@@ -1,0 +1,10 @@
+{
+  "extends": "@resume/config-typescript/vite-library.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  "include": ["src"]
+}
