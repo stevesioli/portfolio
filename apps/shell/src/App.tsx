@@ -42,7 +42,7 @@ export function App() {
             </RemoteBoundary>
           </Section>
 
-          <Section id="education" kicker="Background" title="Education & Early Career">
+          <Section id="education" kicker="Background" title="Early Career & Education">
             <RemoteBoundary label="Education">
               <EducationSection />
             </RemoteBoundary>

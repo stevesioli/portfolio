@@ -45,26 +45,6 @@ export default function EducationSection() {
         <Card className="h-full">
           <CardHeader>
             <div className="bg-primary/10 text-primary mb-2 flex size-9 items-center justify-center rounded-lg">
-              <GraduationCapIcon className="size-4.5" />
-            </div>
-            <CardTitle>Education</CardTitle>
-          </CardHeader>
-          <CardContent>
-            {EDUCATION.map((entry) => (
-              <div key={entry.id}>
-                <p className="font-medium">{entry.credential}</p>
-                <p className="text-muted-foreground mt-1 text-sm">{entry.institution}</p>
-                <p className="text-muted-foreground font-mono text-xs">{entry.date}</p>
-              </div>
-            ))}
-          </CardContent>
-        </Card>
-      </Reveal>
-
-      <Reveal delay={0.1}>
-        <Card className="h-full">
-          <CardHeader>
-            <div className="bg-primary/10 text-primary mb-2 flex size-9 items-center justify-center rounded-lg">
               <BriefcaseIcon className="size-4.5" />
             </div>
             <CardTitle>Early Career</CardTitle>
@@ -90,6 +70,26 @@ export default function EducationSection() {
                 </StaggerItem>
               ))}
             </StaggerGroup>
+          </CardContent>
+        </Card>
+      </Reveal>
+
+      <Reveal delay={0.2}>
+        <Card className="h-full">
+          <CardHeader>
+            <div className="bg-primary/10 text-primary mb-2 flex size-9 items-center justify-center rounded-lg">
+              <GraduationCapIcon className="size-4.5" />
+            </div>
+            <CardTitle>Education</CardTitle>
+          </CardHeader>
+          <CardContent>
+            {EDUCATION.map((entry) => (
+              <div key={entry.id}>
+                <p className="font-medium">{entry.credential}</p>
+                <p className="text-muted-foreground mt-1 text-sm">{entry.institution}</p>
+                <p className="text-muted-foreground font-mono text-xs">{entry.date}</p>
+              </div>
+            ))}
           </CardContent>
         </Card>
       </Reveal>
