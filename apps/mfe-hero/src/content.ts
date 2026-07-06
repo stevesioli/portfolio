@@ -24,23 +24,29 @@ export const PULL_QUOTE =
 
 export const IMPACT_STATS: ImpactStat[] = [
   {
-    value: '~40%',
+    value: 40,
+    prefix: '~',
+    suffix: '%',
     label: 'less redundant front-end work',
     description:
       'Introduced a shared component architecture adopted across multiple digital initiatives.',
   },
   {
-    value: '~80%',
+    value: 80,
+    prefix: '~',
+    suffix: '%',
     label: 'faster page performance',
     description: 'Re-architected a legacy vehicle locator into a single-page application.',
   },
   {
-    value: '15+ yrs',
+    value: 15,
+    suffix: '+ yrs',
     label: 'frontend platform experience',
     description: 'Enterprise and high-scale environments, from Amazon to General Motors.',
   },
   {
-    value: '275+',
+    value: 275,
+    suffix: '+',
     label: 'global brand sites supported',
     description: 'Contributed to the CMS platform architecture powering GM’s global brand portfolio.',
   },

@@ -11,7 +11,12 @@ export interface ContactLink {
 }
 
 export interface ImpactStat {
-  value: string;
+  /** Numeric value to animate (count up from 0 on scroll into view). */
+  value: number;
+  /** Text rendered before the animated number, e.g. "~". */
+  prefix?: string;
+  /** Text rendered after the animated number, e.g. "%" or "+ yrs". */
+  suffix?: string;
   label: string;
   description: string;
 }

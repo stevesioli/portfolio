@@ -15,6 +15,7 @@ export * from './theme/theme-provider';
 export * from './theme/theme-toggle';
 
 // Motion
+export * from './motion/count-up';
 export * from './motion/reveal';
 export * from './motion/stagger';
 
