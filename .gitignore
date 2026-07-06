@@ -7,8 +7,9 @@ dist/
 build/
 apps/shell/public/remotes/
 
-# Module Federation dev/build-generated type stubs for remotes
+# Module Federation dev/build-generated type stubs and caches
 @mf-types/
+.mf/
 
 # Turborepo
 .turbo/

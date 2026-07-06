@@ -70,43 +70,41 @@ const EXPERIENCE: ExperienceEntry[] = [
 export default function ExperienceSection() {
   return (
     <div>
-      <ol className="relative space-y-10 sm:space-y-12">
+      <div role="list" className="relative">
         <div
           aria-hidden
           className="bg-border absolute top-2 bottom-2 left-[7px] hidden w-px sm:block"
         />
-        <StaggerGroup className="contents">
+        <StaggerGroup className="space-y-10 sm:space-y-12">
           {EXPERIENCE.map((entry) => (
-            <StaggerItem key={entry.id}>
-              <li className="relative sm:pl-10">
-                <span
-                  aria-hidden
-                  className="bg-primary absolute top-2 left-0 hidden size-[15px] rounded-full ring-4 ring-background sm:block"
-                />
+            <StaggerItem key={entry.id} role="listitem" className="relative sm:pl-10">
+              <span
+                aria-hidden
+                className="bg-primary absolute top-2 left-0 hidden size-[15px] rounded-full ring-4 ring-background sm:block"
+              />
 
-                <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
-                  <h3 className="font-serif text-xl font-semibold">{entry.role}</h3>
-                  <Badge variant="outline" className="w-fit font-mono">
-                    {entry.start} &ndash; {entry.end}
-                  </Badge>
-                </div>
-                <p className="text-muted-foreground mt-1 text-sm font-medium">
-                  {entry.company} &middot; {entry.location}
-                </p>
+              <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
+                <h3 className="font-serif text-xl font-semibold">{entry.role}</h3>
+                <Badge variant="outline" className="w-fit font-mono">
+                  {entry.start} &ndash; {entry.end}
+                </Badge>
+              </div>
+              <p className="text-muted-foreground mt-1 text-sm font-medium">
+                {entry.company} &middot; {entry.location}
+              </p>
 
-                <ul className="mt-4 space-y-2.5">
-                  {entry.highlights.map((point) => (
-                    <li key={point} className="flex gap-3 text-sm leading-relaxed">
-                      <span className="bg-primary/60 mt-2 size-1 shrink-0 rounded-full" />
-                      <span className="text-foreground/90">{point}</span>
-                    </li>
-                  ))}
-                </ul>
-              </li>
+              <ul className="mt-4 space-y-2.5">
+                {entry.highlights.map((point) => (
+                  <li key={point} className="flex gap-3 text-sm leading-relaxed">
+                    <span className="bg-primary/60 mt-2 size-1 shrink-0 rounded-full" />
+                    <span className="text-foreground/90">{point}</span>
+                  </li>
+                ))}
+              </ul>
             </StaggerItem>
           ))}
         </StaggerGroup>
-      </ol>
+      </div>
 
       <Reveal delay={0.1} className="mt-10">
         <p className="text-muted-foreground text-sm">

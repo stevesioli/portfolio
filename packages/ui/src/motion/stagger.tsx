@@ -41,10 +41,18 @@ const itemVariantsReduced: Variants = {
   visible: { opacity: 1 },
 };
 
-export function StaggerItem({ children, className }: { children: React.ReactNode; className?: string }) {
+export interface StaggerItemProps extends Omit<React.ComponentProps<'div'>, 'children'> {
+  children: React.ReactNode;
+}
+
+export function StaggerItem({ children, className, ...rest }: StaggerItemProps) {
   const shouldReduceMotion = useReducedMotion();
   return (
-    <motion.div className={className} variants={shouldReduceMotion ? itemVariantsReduced : itemVariantsFull}>
+    <motion.div
+      className={className}
+      variants={shouldReduceMotion ? itemVariantsReduced : itemVariantsFull}
+      {...rest}
+    >
       {children}
     </motion.div>
   );
