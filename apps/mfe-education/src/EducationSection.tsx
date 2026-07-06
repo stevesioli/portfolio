@@ -44,7 +44,7 @@ export default function EducationSection() {
       <Reveal>
         <Card className="h-full">
           <CardHeader>
-            <div className="bg-primary/10 text-primary mb-2 flex size-9 items-center justify-center rounded-lg">
+            <div className="bg-accent-blue/10 text-accent-blue mb-2 flex size-9 items-center justify-center rounded-lg">
               <BriefcaseIcon className="size-4.5" />
             </div>
             <CardTitle>Early Career</CardTitle>
@@ -77,7 +77,7 @@ export default function EducationSection() {
       <Reveal delay={0.2}>
         <Card className="h-full">
           <CardHeader>
-            <div className="bg-primary/10 text-primary mb-2 flex size-9 items-center justify-center rounded-lg">
+            <div className="bg-accent-blue/10 text-accent-blue mb-2 flex size-9 items-center justify-center rounded-lg">
               <GraduationCapIcon className="size-4.5" />
             </div>
             <CardTitle>Education</CardTitle>
