@@ -38,34 +38,23 @@ export default function HeroHybrid() {
         </Reveal>
 
         <Reveal direction="left" delay={0.1}>
-          <div className="border-accent-blue/30 from-accent-blue/5 relative rounded-2xl border-l-4 bg-gradient-to-br to-transparent p-8">
-            {/*
-              Floated + shape-outside so the quote text wraps along the
-              avatar's circular edge instead of stopping at its bounding box.
-            */}
-            <div className="relative float-right mb-4 ml-6 size-24 shrink-0 sm:mb-6 sm:ml-8 sm:size-32 lg:size-40 [shape-outside:circle(50%)]">
-              {/* Soft copper+blue glow behind the avatar, echoing the photo treatment */}
-              <div
-                aria-hidden
-                className="from-accent-blue/40 to-primary/30 absolute -inset-3 rounded-full bg-gradient-to-br blur-xl"
-              />
-              <Avatar className="border-background relative size-full border-4 shadow-lg">
+          <div className="border-accent-blue/30 bg-radial-[at_bottom_right] from-accent-blue/25 via-accent-blue/5 to-transparent relative rounded-2xl border-l-4 p-8">
+            <QuoteIcon className="text-accent-blue/40 size-8" />
+            <p className="mt-4 font-serif text-2xl leading-snug font-medium tracking-tight sm:text-3xl">
+              {PULL_QUOTE}
+            </p>
+
+            <div className="mt-6 flex items-end justify-between gap-4">
+              <Badge variant="blue">Open to new opportunities</Badge>
+              <Avatar className="size-20 shrink-0 sm:size-24 lg:size-28">
                 <AvatarImage
                   src="images/steve-sioli.jpg"
                   alt="Steve Sioli"
                   className="object-cover"
                 />
-                <AvatarFallback className="font-serif text-3xl">SS</AvatarFallback>
+                <AvatarFallback className="font-serif text-2xl">SS</AvatarFallback>
               </Avatar>
             </div>
-
-            <QuoteIcon className="text-accent-blue/40 size-8" />
-            <p className="mt-4 font-serif text-2xl leading-snug font-medium tracking-tight sm:text-3xl">
-              {PULL_QUOTE}
-            </p>
-            <Badge variant="blue" className="mt-6 clear-both">
-              Open to new opportunities
-            </Badge>
           </div>
         </Reveal>
       </div>
