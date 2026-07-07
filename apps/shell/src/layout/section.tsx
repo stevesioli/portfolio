@@ -25,17 +25,23 @@ interface SectionProps {
  * heading — layout consistency lives in the shell, not duplicated five
  * times across independently built apps.
  *
- * Sticky + a fixed viewport-height minimum is what produces the
- * stacked-cards scroll effect: each section pins just below the navbar
- * and stays there for its own full height before the next section
- * (painted after it, so visually on top) slides up to cover it.
+ * Sticky + a fixed viewport-height box is what produces the stacked-
+ * cards scroll effect: each section pins just below the navbar and
+ * occupies exactly the remaining viewport. If a section's own content
+ * (e.g. a long timeline) is taller than that, it scrolls *inside* the
+ * section via `overflow-y-auto` — the browser's native scroll-chaining
+ * means wheel/touch input scrolls that inner content first, and only
+ * once it's fully scrolled does the page continue and the next section
+ * slide up to cover this one. Without the fixed height + overflow, a
+ * naturally-tall sticky section would just freeze in place with its
+ * lower content stuck below the fold, never actually scrolled into view.
  */
 export function Section({ id, kicker, title, children, className, stackIndex }: SectionProps) {
   return (
     <section
       id={id}
       style={{ zIndex: stackIndex }}
-      className={`sticky top-16 min-h-dvh scroll-mt-24 py-20 shadow-[0_-24px_48px_-24px_rgba(0,0,0,0.35)] sm:py-28 ${className ?? ''}`}
+      className={`sticky top-16 h-[calc(100dvh-4rem)] overflow-y-auto scroll-mt-24 py-20 shadow-[0_-24px_48px_-24px_rgba(0,0,0,0.35)] sm:py-28 ${className ?? ''}`}
     >
       <div className="mx-auto max-w-6xl px-6">
         <Reveal className="mb-10 sm:mb-14">
