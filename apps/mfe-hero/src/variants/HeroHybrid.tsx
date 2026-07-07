@@ -39,29 +39,31 @@ export default function HeroHybrid() {
 
         <Reveal direction="left" delay={0.1}>
           <div className="border-accent-blue/30 from-accent-blue/5 relative rounded-2xl border-l-4 bg-gradient-to-br to-transparent p-8">
-            <div className="flex items-center gap-4">
-              <div className="relative shrink-0">
-                {/* Soft copper+blue glow behind the avatar, echoing the photo treatment */}
-                <div
-                  aria-hidden
-                  className="from-accent-blue/40 to-primary/30 absolute -inset-2 rounded-full bg-gradient-to-br blur-xl"
+            {/*
+              Floated + shape-outside so the quote text wraps along the
+              avatar's circular edge instead of stopping at its bounding box.
+            */}
+            <div className="relative float-right mb-4 ml-6 size-24 shrink-0 sm:mb-6 sm:ml-8 sm:size-32 lg:size-40 [shape-outside:circle(50%)]">
+              {/* Soft copper+blue glow behind the avatar, echoing the photo treatment */}
+              <div
+                aria-hidden
+                className="from-accent-blue/40 to-primary/30 absolute -inset-3 rounded-full bg-gradient-to-br blur-xl"
+              />
+              <Avatar className="border-background relative size-full border-4 shadow-lg">
+                <AvatarImage
+                  src="images/steve-sioli.jpg"
+                  alt="Steve Sioli"
+                  className="object-cover"
                 />
-                <Avatar className="border-background relative size-16 border-4 shadow-lg sm:size-20">
-                  <AvatarImage
-                    src="images/steve-sioli.jpg"
-                    alt="Steve Sioli"
-                    className="object-cover"
-                  />
-                  <AvatarFallback className="font-serif text-2xl">SS</AvatarFallback>
-                </Avatar>
-              </div>
-              <QuoteIcon className="text-accent-blue/40 size-8" />
+                <AvatarFallback className="font-serif text-3xl">SS</AvatarFallback>
+              </Avatar>
             </div>
 
-            <p className="mt-6 font-serif text-2xl leading-snug font-medium tracking-tight sm:text-3xl">
+            <QuoteIcon className="text-accent-blue/40 size-8" />
+            <p className="mt-4 font-serif text-2xl leading-snug font-medium tracking-tight sm:text-3xl">
               {PULL_QUOTE}
             </p>
-            <Badge variant="blue" className="mt-6">
+            <Badge variant="blue" className="mt-6 clear-both">
               Open to new opportunities
             </Badge>
           </div>
