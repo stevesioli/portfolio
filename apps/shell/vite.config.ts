@@ -1,4 +1,5 @@
-import { defineConfig, loadEnv } from 'vite';
+import path from 'node:path';
+import { defineConfig, loadEnv, type Plugin } from 'vite';
 import react from '@vitejs/plugin-react';
 import tailwindcss from '@tailwindcss/vite';
 import { federation } from '@module-federation/vite';
@@ -29,17 +30,52 @@ const SHARED = {
   'react-dom': { singleton: true, requiredVersion: '^19.0.0' },
 } as const;
 
+/**
+ * @module-federation/vite doesn't propagate a remote's HMR updates into
+ * the host app in dev mode (see module-federation/vite#183 upstream) —
+ * editing a remote's source produces a hot-update request from that
+ * remote's own dev server, but the change never applies inside the
+ * composed shell, only on a manual full browser refresh.
+ *
+ * As a workaround, watch each remote's `src/` directly from the shell's
+ * dev server and force a full reload of the shell tab whenever any of
+ * those files change. Not true granular HMR (component state resets),
+ * but it restores "save and see it update" instead of requiring a
+ * manual refresh after every edit.
+ */
+function remoteHmrSync(remoteRoots: string[]): Plugin {
+  return {
+    name: 'remote-hmr-sync',
+    apply: 'serve',
+    configureServer(server) {
+      for (const root of remoteRoots) {
+        server.watcher.add(root);
+      }
+      server.watcher.on('change', (file) => {
+        if (remoteRoots.some((root) => file.startsWith(root))) {
+          server.ws.send({ type: 'full-reload' });
+        }
+      });
+    },
+  };
+}
+
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '');
   const basePath = env.VITE_BASE_PATH?.trim() || '/';
   const remoteBase = `${basePath}remotes`.replace(/\/{2,}/g, '/');
   const isDev = mode === 'development';
 
+  const remoteRoots = Object.values(REMOTES).map(({ slug }) =>
+    path.resolve(import.meta.dirname, '..', `mfe-${slug}`, 'src'),
+  );
+
   return {
     base: basePath,
     plugins: [
       react(),
       tailwindcss(),
+      ...(isDev ? [remoteHmrSync(remoteRoots)] : []),
       federation({
         name: 'shell',
         remotes: Object.fromEntries(
