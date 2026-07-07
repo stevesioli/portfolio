@@ -38,21 +38,28 @@ export default function HeroHybrid() {
         </Reveal>
 
         <Reveal direction="left" delay={0.1}>
-          <div className="border-accent-blue/30 bg-radial-[at_bottom_right] from-accent-blue/25 via-accent-blue/5 to-transparent relative rounded-2xl border-l-4 p-8">
-            <QuoteIcon className="text-accent-blue/40 size-8" />
-            <p className="mt-4 font-serif text-2xl leading-snug font-medium tracking-tight sm:text-3xl">
+          {/*
+            Radial gradient runs from the sampled shirt blue (nearest the
+            avatar, bottom-right) through the sampled shirt rust/orange to
+            black at the far corner. Since that spans into black
+            regardless of light/dark theme, text in this card is pinned
+            to a light color rather than the usual theme-aware foreground.
+          */}
+          <div className="border-accent-blue/30 bg-radial-[at_bottom_right] from-accent-blue/80 via-accent-orange/60 to-black relative rounded-2xl border-l-4 p-8">
+            <QuoteIcon className="text-accent-blue/70 size-8" />
+            <p className="mt-4 font-serif text-2xl leading-snug font-medium tracking-tight text-white sm:text-3xl">
               {PULL_QUOTE}
             </p>
 
             <div className="mt-6 flex items-end justify-between gap-4">
               <Badge variant="blue">Open to new opportunities</Badge>
-              <Avatar className="size-20 shrink-0 sm:size-24 lg:size-28">
+              <Avatar className="size-28 shrink-0 sm:size-36 lg:size-44">
                 <AvatarImage
                   src="images/steve-sioli.jpg"
                   alt="Steve Sioli"
                   className="object-cover"
                 />
-                <AvatarFallback className="font-serif text-2xl">SS</AvatarFallback>
+                <AvatarFallback className="font-serif text-3xl">SS</AvatarFallback>
               </Avatar>
             </div>
           </div>

@@ -16,10 +16,11 @@
  * Shared design tokens for the resume site's custom shadcn/ui theme.
  * "Editorial, minimal, dark-first" — a near-black canvas, a warm
  * off-white reading color, a restrained copper/amber primary accent,
- * and a second, deliberately sparing pop: a muted sky/denim blue
- * (oklch hue ~224) sampled directly from the plaid shirt in the
- * headshot photo (see --accent-blue below), used only in a handful of
- * places that sit near the photo or call out something worth noticing.
+ * and two further, deliberately sparing pops sampled directly from the
+ * plaid shirt in the headshot photo: a muted sky/denim blue (oklch hue
+ * ~224, see --accent-blue) and a deep rust/orange (oklch hue ~38, see
+ * --accent-orange), used only in a handful of places that sit near the
+ * photo or call out something worth noticing.
  *
  * Every micro-frontend imports this file directly so the shell and all
  * federated remotes render from one visual source of truth, even
@@ -50,6 +51,9 @@
 
   --color-accent-blue: var(--accent-blue);
   --color-accent-blue-foreground: var(--accent-blue-foreground);
+
+  --color-accent-orange: var(--accent-orange);
+  --color-accent-orange-foreground: var(--accent-orange-foreground);
 
   --color-destructive: var(--destructive);
   --color-destructive-foreground: var(--destructive-foreground);
@@ -97,6 +101,10 @@
   --accent-blue: oklch(0.55 0.13 224);
   --accent-blue-foreground: oklch(0.99 0.004 90);
 
+  /* Third accent — deep rust/orange sampled from the shirt's plaid pattern */
+  --accent-orange: oklch(0.55 0.12 38);
+  --accent-orange-foreground: oklch(0.99 0.004 90);
+
   --destructive: oklch(0.55 0.21 27);
   --destructive-foreground: oklch(0.99 0 0);
 
@@ -131,6 +139,10 @@
   /* Second accent — sampled-shirt blue, used sparingly */
   --accent-blue: oklch(0.72 0.11 224);
   --accent-blue-foreground: oklch(0.145 0 0);
+
+  /* Third accent — deep rust/orange sampled from the shirt's plaid pattern */
+  --accent-orange: oklch(0.7 0.11 38);
+  --accent-orange-foreground: oklch(0.145 0 0);
 
   --destructive: oklch(0.62 0.2 25);
   --destructive-foreground: oklch(0.97 0 0);
