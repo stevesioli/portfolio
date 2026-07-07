@@ -7,7 +7,21 @@ const ACCENTS = ['primary', 'accent-blue', 'primary', 'accent-blue'] as const;
 
 export function ImpactStatsRow({ className }: { className?: string }) {
   return (
-    <StaggerGroup className={`grid gap-4 sm:grid-cols-2 lg:grid-cols-4 ${className ?? ''}`}>
+    <StaggerGroup
+      className={`grid gap-4 sm:grid-cols-2 lg:grid-cols-4 ${className ?? ''}`}
+      staggerDelay={0.2}
+      // The shell's hero section is now a fixed viewport-height box that
+      // scrolls its own overflow internally (see apps/shell's Section),
+      // so this row can sit below the fold within that inner scroll
+      // area. StaggerGroup's "-40%" default margin (tuned for section
+      // headings appearing lower on a long, freely-scrolling page)
+      // ends up requiring the row to reach the top 60% of the *window*
+      // viewport — which, pinned inside the hero's confined box, can
+      // coincide with the next section already sliding over. Use a
+      // small, symmetric margin instead so it fires as soon as the row
+      // scrolls into the hero's own visible area.
+      viewportMargin="-80px"
+    >
       {IMPACT_STATS.map((stat, index) => {
         const Icon = stat.icon;
         const accent = ACCENTS[index % ACCENTS.length];

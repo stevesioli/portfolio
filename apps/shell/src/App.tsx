@@ -34,7 +34,7 @@ export function App() {
           <section
             id="summary"
             style={{ zIndex: 0 }}
-            className="bg-background sticky top-16 h-[calc(100dvh-4rem)] overflow-y-auto scroll-mt-24"
+            className="bg-background [scrollbar-width:none] sticky top-16 h-[calc(100dvh-4rem)] overflow-y-auto scroll-mt-24 [&::-webkit-scrollbar]:hidden"
           >
             <RemoteBoundary label="Summary">
               <HeroSection />
