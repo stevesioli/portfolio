@@ -1,3 +1,4 @@
+import { useRef } from 'react';
 import { ThemeProvider } from '@resume/ui';
 
 import {
@@ -11,8 +12,12 @@ import { Footer } from './layout/footer';
 import { Navbar } from './layout/navbar';
 import { RemoteBoundary } from './layout/remote-boundary';
 import { Section } from './layout/section';
+import { useIsStuck } from './layout/use-is-stuck';
 
 export function App() {
+  const summaryRef = useRef<HTMLElement>(null);
+  const isSummaryStuck = useIsStuck(summaryRef, 64);
+
   return (
     <ThemeProvider>
       <div className="bg-background text-foreground relative min-h-dvh">
@@ -32,9 +37,10 @@ export function App() {
             the usual flush hand-off between sections.
           */}
           <section
+            ref={summaryRef}
             id="summary"
             style={{ zIndex: 0 }}
-            className="bg-background [scrollbar-width:none] sticky top-16 h-[calc(100dvh-4rem)] overflow-y-auto scroll-mt-24 [&::-webkit-scrollbar]:hidden"
+            className={`bg-background [scrollbar-width:none] sticky top-16 h-[calc(100dvh-4rem)] scroll-mt-24 [&::-webkit-scrollbar]:hidden ${isSummaryStuck ? 'overflow-y-auto' : 'overflow-hidden'}`}
           >
             <RemoteBoundary label="Summary">
               <HeroSection />

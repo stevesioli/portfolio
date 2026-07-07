@@ -1,5 +1,7 @@
-import type { ReactNode } from 'react';
+import { useRef, type ReactNode } from 'react';
 import { Reveal } from '@resume/ui';
+
+import { useIsStuck } from './use-is-stuck';
 
 interface SectionProps {
   id: string;
@@ -40,13 +42,24 @@ interface SectionProps {
  * `::-webkit-scrollbar { display: none }`) so only the page's main
  * scrollbar is ever visible — the inner overflow still scrolls via
  * wheel/touch, it just doesn't render its own scrollbar track.
+ *
+ * The section's own overflow only becomes scrollable once it's
+ * actually pinned (see useIsStuck) — otherwise, while it's still
+ * sliding up from below, scroll-chaining would let it capture
+ * wheel/touch input meant to keep bringing it into place, which reads
+ * as the content jumping around before the section has even fully
+ * covered the previous one.
  */
 export function Section({ id, kicker, title, children, className, stackIndex }: SectionProps) {
+  const ref = useRef<HTMLElement>(null);
+  const isStuck = useIsStuck(ref, 64);
+
   return (
     <section
+      ref={ref}
       id={id}
       style={{ zIndex: stackIndex }}
-      className={`[scrollbar-width:none] sticky top-16 h-[calc(100dvh-4rem)] overflow-y-auto scroll-mt-24 py-20 shadow-[0_-24px_48px_-24px_rgba(0,0,0,0.35)] [&::-webkit-scrollbar]:hidden sm:py-28 ${className ?? ''}`}
+      className={`[scrollbar-width:none] sticky top-16 h-[calc(100dvh-4rem)] scroll-mt-24 py-20 shadow-[0_-24px_48px_-24px_rgba(0,0,0,0.35)] [&::-webkit-scrollbar]:hidden sm:py-28 ${isStuck ? 'overflow-y-auto' : 'overflow-hidden'} ${className ?? ''}`}
     >
       <div className="mx-auto max-w-6xl px-6">
         <Reveal className="mb-10 sm:mb-14">
