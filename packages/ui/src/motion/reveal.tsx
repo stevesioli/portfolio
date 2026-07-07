@@ -9,6 +9,14 @@ export interface RevealProps {
   /** Direction the content travels in from. */
   direction?: 'up' | 'down' | 'left' | 'right' | 'none';
   as?: 'div' | 'section' | 'article' | 'li';
+  /**
+   * IntersectionObserver rootMargin passed to `viewport.margin`. Shrinks
+   * the bottom of the trigger zone by default so content fires once
+   * it's well up into the viewport (closer to the top) rather than the
+   * moment it peeks over the bottom edge. Override per call site if a
+   * different trigger point is needed.
+   */
+  viewportMargin?: string;
 }
 
 const offset: Record<NonNullable<RevealProps['direction']>, { x?: number; y?: number }> = {
@@ -23,7 +31,14 @@ const offset: Record<NonNullable<RevealProps['direction']>, { x?: number; y?: nu
  * Scroll-triggered fade + slide reveal, used across every micro-frontend
  * for consistent, subtle entrance motion. Respects `prefers-reduced-motion`.
  */
-export function Reveal({ children, className, delay = 0, direction = 'up', as = 'div' }: RevealProps) {
+export function Reveal({
+  children,
+  className,
+  delay = 0,
+  direction = 'up',
+  as = 'div',
+  viewportMargin = '0px 0px -40% 0px',
+}: RevealProps) {
   const shouldReduceMotion = useReducedMotion();
   const MotionTag = motion[as];
 
@@ -39,7 +54,7 @@ export function Reveal({ children, className, delay = 0, direction = 'up', as = 
       className={className}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, margin: '-80px' }}
+      viewport={{ once: true, margin: viewportMargin }}
       variants={variants}
       transition={{ duration: 0.6, delay, ease: [0.16, 1, 0.3, 1] }}
     >

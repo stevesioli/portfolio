@@ -6,6 +6,8 @@ export interface StaggerGroupProps {
   className?: string;
   /** Seconds between each child's entrance. */
   staggerDelay?: number;
+  /** IntersectionObserver rootMargin passed to `viewport.margin` — see Reveal. */
+  viewportMargin?: string;
 }
 
 const containerVariants: Variants = {
@@ -16,13 +18,18 @@ const containerVariants: Variants = {
 };
 
 /** Wraps a list of `StaggerItem`s and reveals them in sequence on scroll. */
-export function StaggerGroup({ children, className, staggerDelay = 0.08 }: StaggerGroupProps) {
+export function StaggerGroup({
+  children,
+  className,
+  staggerDelay = 0.08,
+  viewportMargin = '0px 0px -40% 0px',
+}: StaggerGroupProps) {
   return (
     <motion.div
       className={className}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, margin: '-80px' }}
+      viewport={{ once: true, margin: viewportMargin }}
       variants={containerVariants}
       custom={staggerDelay}
     >
