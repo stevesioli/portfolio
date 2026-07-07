@@ -6,7 +6,16 @@ interface SectionProps {
   kicker: string;
   title: string;
   children: ReactNode;
+  /** Must include an opaque background utility (e.g. `bg-background`) — see stackIndex note below. */
   className?: string;
+  /**
+   * Stacking order for the "each section scrolls over the previous one"
+   * effect. Every section is `position: sticky; top: 16` (pinning just
+   * below the fixed navbar), so later sections in the document naturally
+   * paint over earlier ones — this just makes that explicit and keeps
+   * everything safely under the navbar's z-40. Higher sits on top.
+   */
+  stackIndex: number;
 }
 
 /**
@@ -15,10 +24,19 @@ interface SectionProps {
  * federated remote only has to render its own content below the
  * heading — layout consistency lives in the shell, not duplicated five
  * times across independently built apps.
+ *
+ * Sticky + a fixed viewport-height minimum is what produces the
+ * stacked-cards scroll effect: each section pins just below the navbar
+ * and stays there for its own full height before the next section
+ * (painted after it, so visually on top) slides up to cover it.
  */
-export function Section({ id, kicker, title, children, className }: SectionProps) {
+export function Section({ id, kicker, title, children, className, stackIndex }: SectionProps) {
   return (
-    <section id={id} className={`scroll-mt-24 py-20 sm:py-28 ${className ?? ''}`}>
+    <section
+      id={id}
+      style={{ zIndex: stackIndex }}
+      className={`sticky top-16 min-h-dvh scroll-mt-24 py-20 shadow-[0_-24px_48px_-24px_rgba(0,0,0,0.35)] sm:py-28 ${className ?? ''}`}
+    >
       <div className="mx-auto max-w-6xl px-6">
         <Reveal className="mb-10 sm:mb-14">
           <p className="text-primary font-mono text-xs font-medium tracking-[0.2em] uppercase">

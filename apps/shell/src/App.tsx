@@ -24,31 +24,66 @@ export function App() {
         <Navbar />
 
         <main className="pt-16">
-          <section id="summary" className="scroll-mt-24">
+          {/*
+            Each top-level section is sticky (pinned just below the fixed
+            navbar) with an explicit, opaque background and an increasing
+            z-index (see Section.tsx), so as you scroll, each one pins in
+            place and the next scrolls up over the top of it rather than
+            the usual flush hand-off between sections.
+          */}
+          <section
+            id="summary"
+            style={{ zIndex: 0 }}
+            className="bg-background sticky top-16 min-h-dvh scroll-mt-24"
+          >
             <RemoteBoundary label="Summary">
               <HeroSection />
             </RemoteBoundary>
           </section>
 
-          <Section id="experience" kicker="Career History" title="Experience">
+          <Section
+            id="experience"
+            kicker="Career History"
+            title="Experience"
+            className="bg-background"
+            stackIndex={8}
+          >
             <RemoteBoundary label="Experience">
               <ExperienceSection />
             </RemoteBoundary>
           </Section>
 
-          <Section id="expertise" kicker="Core Expertise" title="Skills & Leadership" className="bg-secondary/30">
+          <Section
+            id="expertise"
+            kicker="Core Expertise"
+            title="Skills & Leadership"
+            className="bg-secondary"
+            stackIndex={16}
+          >
             <RemoteBoundary label="Skills">
               <SkillsSection />
             </RemoteBoundary>
           </Section>
 
-          <Section id="education" kicker="Background" title="Early Career & Education">
+          <Section
+            id="education"
+            kicker="Background"
+            title="Early Career & Education"
+            className="bg-background"
+            stackIndex={24}
+          >
             <RemoteBoundary label="Education">
               <EducationSection />
             </RemoteBoundary>
           </Section>
 
-          <Section id="contact" kicker="Get In Touch" title="Let's Work Together" className="bg-secondary/30">
+          <Section
+            id="contact"
+            kicker="Get In Touch"
+            title="Let's Work Together"
+            className="bg-secondary"
+            stackIndex={32}
+          >
             <RemoteBoundary label="Contact">
               <ContactSection />
             </RemoteBoundary>
