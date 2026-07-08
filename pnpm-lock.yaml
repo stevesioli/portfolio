@@ -35,7 +35,7 @@ importers:
     devDependencies:
       '@module-federation/vite':
         specifier: ^1.16.0
-        version: 1.16.12(typescript@5.9.3)(vite@7.3.6(jiti@2.7.0)(lightningcss@1.32.0))
+        version: 1.16.12(typescript@5.9.3)(vite@7.3.6(@types/node@22.20.0)(jiti@2.7.0)(lightningcss@1.32.0))
       '@resume/config-eslint':
         specifier: workspace:*
         version: link:../../packages/config-eslint
@@ -44,7 +44,7 @@ importers:
         version: link:../../packages/config-typescript
       '@tailwindcss/vite':
         specifier: ^4.0.0
-        version: 4.3.2(vite@7.3.6(jiti@2.7.0)(lightningcss@1.32.0))
+        version: 4.3.2(vite@7.3.6(@types/node@22.20.0)(jiti@2.7.0)(lightningcss@1.32.0))
       '@types/react':
         specifier: ^19.0.2
         version: 19.2.17
@@ -53,7 +53,7 @@ importers:
         version: 19.2.3(@types/react@19.2.17)
       '@vitejs/plugin-react':
         specifier: ^4.3.4
-        version: 4.7.0(vite@7.3.6(jiti@2.7.0)(lightningcss@1.32.0))
+        version: 4.7.0(vite@7.3.6(@types/node@22.20.0)(jiti@2.7.0)(lightningcss@1.32.0))
       eslint:
         specifier: ^9.17.0
         version: 9.39.4(jiti@2.7.0)
@@ -65,7 +65,7 @@ importers:
         version: 5.9.3
       vite:
         specifier: ^7.0.0
-        version: 7.3.6(jiti@2.7.0)(lightningcss@1.32.0)
+        version: 7.3.6(@types/node@22.20.0)(jiti@2.7.0)(lightningcss@1.32.0)
 
   apps/mfe-education:
     dependencies:
@@ -84,7 +84,7 @@ importers:
     devDependencies:
       '@module-federation/vite':
         specifier: ^1.16.0
-        version: 1.16.12(typescript@5.9.3)(vite@7.3.6(jiti@2.7.0)(lightningcss@1.32.0))
+        version: 1.16.12(typescript@5.9.3)(vite@7.3.6(@types/node@22.20.0)(jiti@2.7.0)(lightningcss@1.32.0))
       '@resume/config-eslint':
         specifier: workspace:*
         version: link:../../packages/config-eslint
@@ -93,7 +93,7 @@ importers:
         version: link:../../packages/config-typescript
       '@tailwindcss/vite':
         specifier: ^4.0.0
-        version: 4.3.2(vite@7.3.6(jiti@2.7.0)(lightningcss@1.32.0))
+        version: 4.3.2(vite@7.3.6(@types/node@22.20.0)(jiti@2.7.0)(lightningcss@1.32.0))
       '@types/react':
         specifier: ^19.0.2
         version: 19.2.17
@@ -102,7 +102,7 @@ importers:
         version: 19.2.3(@types/react@19.2.17)
       '@vitejs/plugin-react':
         specifier: ^4.3.4
-        version: 4.7.0(vite@7.3.6(jiti@2.7.0)(lightningcss@1.32.0))
+        version: 4.7.0(vite@7.3.6(@types/node@22.20.0)(jiti@2.7.0)(lightningcss@1.32.0))
       eslint:
         specifier: ^9.17.0
         version: 9.39.4(jiti@2.7.0)
@@ -114,7 +114,7 @@ importers:
         version: 5.9.3
       vite:
         specifier: ^7.0.0
-        version: 7.3.6(jiti@2.7.0)(lightningcss@1.32.0)
+        version: 7.3.6(@types/node@22.20.0)(jiti@2.7.0)(lightningcss@1.32.0)
 
   apps/mfe-experience:
     dependencies:
@@ -133,7 +133,7 @@ importers:
     devDependencies:
       '@module-federation/vite':
         specifier: ^1.16.0
-        version: 1.16.12(typescript@5.9.3)(vite@7.3.6(jiti@2.7.0)(lightningcss@1.32.0))
+        version: 1.16.12(typescript@5.9.3)(vite@7.3.6(@types/node@22.20.0)(jiti@2.7.0)(lightningcss@1.32.0))
       '@resume/config-eslint':
         specifier: workspace:*
         version: link:../../packages/config-eslint
@@ -142,7 +142,7 @@ importers:
         version: link:../../packages/config-typescript
       '@tailwindcss/vite':
         specifier: ^4.0.0
-        version: 4.3.2(vite@7.3.6(jiti@2.7.0)(lightningcss@1.32.0))
+        version: 4.3.2(vite@7.3.6(@types/node@22.20.0)(jiti@2.7.0)(lightningcss@1.32.0))
       '@types/react':
         specifier: ^19.0.2
         version: 19.2.17
@@ -151,7 +151,7 @@ importers:
         version: 19.2.3(@types/react@19.2.17)
       '@vitejs/plugin-react':
         specifier: ^4.3.4
-        version: 4.7.0(vite@7.3.6(jiti@2.7.0)(lightningcss@1.32.0))
+        version: 4.7.0(vite@7.3.6(@types/node@22.20.0)(jiti@2.7.0)(lightningcss@1.32.0))
       eslint:
         specifier: ^9.17.0
         version: 9.39.4(jiti@2.7.0)
@@ -163,7 +163,7 @@ importers:
         version: 5.9.3
       vite:
         specifier: ^7.0.0
-        version: 7.3.6(jiti@2.7.0)(lightningcss@1.32.0)
+        version: 7.3.6(@types/node@22.20.0)(jiti@2.7.0)(lightningcss@1.32.0)
 
   apps/mfe-hero:
     dependencies:
@@ -185,7 +185,7 @@ importers:
     devDependencies:
       '@module-federation/vite':
         specifier: ^1.16.0
-        version: 1.16.12(typescript@5.9.3)(vite@7.3.6(jiti@2.7.0)(lightningcss@1.32.0))
+        version: 1.16.12(typescript@5.9.3)(vite@7.3.6(@types/node@22.20.0)(jiti@2.7.0)(lightningcss@1.32.0))
       '@resume/config-eslint':
         specifier: workspace:*
         version: link:../../packages/config-eslint
@@ -194,7 +194,7 @@ importers:
         version: link:../../packages/config-typescript
       '@tailwindcss/vite':
         specifier: ^4.0.0
-        version: 4.3.2(vite@7.3.6(jiti@2.7.0)(lightningcss@1.32.0))
+        version: 4.3.2(vite@7.3.6(@types/node@22.20.0)(jiti@2.7.0)(lightningcss@1.32.0))
       '@types/react':
         specifier: ^19.0.2
         version: 19.2.17
@@ -203,7 +203,7 @@ importers:
         version: 19.2.3(@types/react@19.2.17)
       '@vitejs/plugin-react':
         specifier: ^4.3.4
-        version: 4.7.0(vite@7.3.6(jiti@2.7.0)(lightningcss@1.32.0))
+        version: 4.7.0(vite@7.3.6(@types/node@22.20.0)(jiti@2.7.0)(lightningcss@1.32.0))
       eslint:
         specifier: ^9.17.0
         version: 9.39.4(jiti@2.7.0)
@@ -215,7 +215,7 @@ importers:
         version: 5.9.3
       vite:
         specifier: ^7.0.0
-        version: 7.3.6(jiti@2.7.0)(lightningcss@1.32.0)
+        version: 7.3.6(@types/node@22.20.0)(jiti@2.7.0)(lightningcss@1.32.0)
 
   apps/mfe-skills:
     dependencies:
@@ -234,7 +234,7 @@ importers:
     devDependencies:
       '@module-federation/vite':
         specifier: ^1.16.0
-        version: 1.16.12(typescript@5.9.3)(vite@7.3.6(jiti@2.7.0)(lightningcss@1.32.0))
+        version: 1.16.12(typescript@5.9.3)(vite@7.3.6(@types/node@22.20.0)(jiti@2.7.0)(lightningcss@1.32.0))
       '@resume/config-eslint':
         specifier: workspace:*
         version: link:../../packages/config-eslint
@@ -243,7 +243,7 @@ importers:
         version: link:../../packages/config-typescript
       '@tailwindcss/vite':
         specifier: ^4.0.0
-        version: 4.3.2(vite@7.3.6(jiti@2.7.0)(lightningcss@1.32.0))
+        version: 4.3.2(vite@7.3.6(@types/node@22.20.0)(jiti@2.7.0)(lightningcss@1.32.0))
       '@types/react':
         specifier: ^19.0.2
         version: 19.2.17
@@ -252,7 +252,7 @@ importers:
         version: 19.2.3(@types/react@19.2.17)
       '@vitejs/plugin-react':
         specifier: ^4.3.4
-        version: 4.7.0(vite@7.3.6(jiti@2.7.0)(lightningcss@1.32.0))
+        version: 4.7.0(vite@7.3.6(@types/node@22.20.0)(jiti@2.7.0)(lightningcss@1.32.0))
       eslint:
         specifier: ^9.17.0
         version: 9.39.4(jiti@2.7.0)
@@ -264,7 +264,7 @@ importers:
         version: 5.9.3
       vite:
         specifier: ^7.0.0
-        version: 7.3.6(jiti@2.7.0)(lightningcss@1.32.0)
+        version: 7.3.6(@types/node@22.20.0)(jiti@2.7.0)(lightningcss@1.32.0)
 
   apps/shell:
     dependencies:
@@ -292,7 +292,7 @@ importers:
     devDependencies:
       '@module-federation/vite':
         specifier: ^1.16.0
-        version: 1.16.12(typescript@5.9.3)(vite@7.3.6(jiti@2.7.0)(lightningcss@1.32.0))
+        version: 1.16.12(typescript@5.9.3)(vite@7.3.6(@types/node@22.20.0)(jiti@2.7.0)(lightningcss@1.32.0))
       '@resume/config-eslint':
         specifier: workspace:*
         version: link:../../packages/config-eslint
@@ -301,7 +301,10 @@ importers:
         version: link:../../packages/config-typescript
       '@tailwindcss/vite':
         specifier: ^4.0.0
-        version: 4.3.2(vite@7.3.6(jiti@2.7.0)(lightningcss@1.32.0))
+        version: 4.3.2(vite@7.3.6(@types/node@22.20.0)(jiti@2.7.0)(lightningcss@1.32.0))
+      '@types/node':
+        specifier: ^22.10.0
+        version: 22.20.0
       '@types/react':
         specifier: ^19.0.2
         version: 19.2.17
@@ -310,7 +313,7 @@ importers:
         version: 19.2.3(@types/react@19.2.17)
       '@vitejs/plugin-react':
         specifier: ^4.3.4
-        version: 4.7.0(vite@7.3.6(jiti@2.7.0)(lightningcss@1.32.0))
+        version: 4.7.0(vite@7.3.6(@types/node@22.20.0)(jiti@2.7.0)(lightningcss@1.32.0))
       eslint:
         specifier: ^9.17.0
         version: 9.39.4(jiti@2.7.0)
@@ -322,7 +325,7 @@ importers:
         version: 5.9.3
       vite:
         specifier: ^7.0.0
-        version: 7.3.6(jiti@2.7.0)(lightningcss@1.32.0)
+        version: 7.3.6(@types/node@22.20.0)(jiti@2.7.0)(lightningcss@1.32.0)
 
   packages/config-eslint:
     dependencies:
@@ -1351,6 +1354,9 @@ packages:
   '@types/json-schema@7.0.15':
     resolution: {integrity: sha512-5+fP8P8MFNC+AyZCDxrB2pkZFPGzqQWUzpSeuuVLvm8VMcorNYavBqoFcxK8bQz4Qsbn4oUEEem4wDLfcysGHA==}
 
+  '@types/node@22.20.0':
+    resolution: {integrity: sha512-QWlFW2wf3nTjC13/DqRnBpR4ZO36VJH/JVBkA/vcnmbTBNQIlnObqyqZE1tUR7+Ni23Lda8R1BxMfbXRpCUx5g==}
+
   '@types/react-dom@19.2.3':
     resolution: {integrity: sha512-jp2L/eY6fn+KgVVQAOqYItbF0VY/YApe5Mz2F0aykSO8gx31bYCZyvSeYxCHKvzHG5eZjc+zyaS5BrBWya2+kQ==}
     peerDependencies:
@@ -2150,6 +2156,9 @@ packages:
     engines: {node: '>=14.17'}
     hasBin: true
 
+  undici-types@6.21.0:
+    resolution: {integrity: sha512-iwDZqg0QAGrg9Rav5H4n0M64c3mkR59cJ6wQp+7C4nI0gsmExaedaYLNO44eT4AtBBwjbTiGPMlt2Md0T9H9JQ==}
+
   undici@7.28.0:
     resolution: {integrity: sha512-cRZYrTDwWznlnRiPjggAGxZXanty6M8RV1ff8Wm4LWXBp7/IG8v5DnOm74DtUBp9OONpK75YlPnIjQqX0dBDtA==}
     engines: {node: '>=20.18.1'}
@@ -2600,12 +2609,12 @@ snapshots:
       find-pkg: 2.0.0
       resolve: 1.22.8
 
-  '@module-federation/vite@1.16.12(typescript@5.9.3)(vite@7.3.6(jiti@2.7.0)(lightningcss@1.32.0))':
+  '@module-federation/vite@1.16.12(typescript@5.9.3)(vite@7.3.6(@types/node@22.20.0)(jiti@2.7.0)(lightningcss@1.32.0))':
     dependencies:
       '@module-federation/dts-plugin': 2.6.0(typescript@5.9.3)
       '@module-federation/runtime': 2.6.0
       '@module-federation/sdk': 2.6.0
-      vite: 7.3.6(jiti@2.7.0)(lightningcss@1.32.0)
+      vite: 7.3.6(@types/node@22.20.0)(jiti@2.7.0)(lightningcss@1.32.0)
     transitivePeerDependencies:
       - bufferutil
       - node-fetch
@@ -2995,12 +3004,12 @@ snapshots:
       '@tailwindcss/oxide-win32-arm64-msvc': 4.3.2
       '@tailwindcss/oxide-win32-x64-msvc': 4.3.2
 
-  '@tailwindcss/vite@4.3.2(vite@7.3.6(jiti@2.7.0)(lightningcss@1.32.0))':
+  '@tailwindcss/vite@4.3.2(vite@7.3.6(@types/node@22.20.0)(jiti@2.7.0)(lightningcss@1.32.0))':
     dependencies:
       '@tailwindcss/node': 4.3.2
       '@tailwindcss/oxide': 4.3.2
       tailwindcss: 4.3.2
-      vite: 7.3.6(jiti@2.7.0)(lightningcss@1.32.0)
+      vite: 7.3.6(@types/node@22.20.0)(jiti@2.7.0)(lightningcss@1.32.0)
 
   '@turbo/darwin-64@2.10.3':
     optional: true
@@ -3044,6 +3053,10 @@ snapshots:
   '@types/estree@1.0.9': {}
 
   '@types/json-schema@7.0.15': {}
+
+  '@types/node@22.20.0':
+    dependencies:
+      undici-types: 6.21.0
 
   '@types/react-dom@19.2.3(@types/react@19.2.17)':
     dependencies:
@@ -3144,7 +3157,7 @@ snapshots:
       '@typescript-eslint/types': 8.62.1
       eslint-visitor-keys: 5.0.1
 
-  '@vitejs/plugin-react@4.7.0(vite@7.3.6(jiti@2.7.0)(lightningcss@1.32.0))':
+  '@vitejs/plugin-react@4.7.0(vite@7.3.6(@types/node@22.20.0)(jiti@2.7.0)(lightningcss@1.32.0))':
     dependencies:
       '@babel/core': 7.29.7
       '@babel/plugin-transform-react-jsx-self': 7.29.7(@babel/core@7.29.7)
@@ -3152,7 +3165,7 @@ snapshots:
       '@rolldown/pluginutils': 1.0.0-beta.27
       '@types/babel__core': 7.20.5
       react-refresh: 0.17.0
-      vite: 7.3.6(jiti@2.7.0)(lightningcss@1.32.0)
+      vite: 7.3.6(@types/node@22.20.0)(jiti@2.7.0)(lightningcss@1.32.0)
     transitivePeerDependencies:
       - supports-color
 
@@ -3818,6 +3831,8 @@ snapshots:
 
   typescript@5.9.3: {}
 
+  undici-types@6.21.0: {}
+
   undici@7.28.0: {}
 
   update-browserslist-db@1.2.3(browserslist@4.28.4):
@@ -3845,7 +3860,7 @@ snapshots:
     optionalDependencies:
       '@types/react': 19.2.17
 
-  vite@7.3.6(jiti@2.7.0)(lightningcss@1.32.0):
+  vite@7.3.6(@types/node@22.20.0)(jiti@2.7.0)(lightningcss@1.32.0):
     dependencies:
       esbuild: 0.28.1
       fdir: 6.5.0(picomatch@4.0.5)
@@ -3854,6 +3869,7 @@ snapshots:
       rollup: 4.62.2
       tinyglobby: 0.2.17
     optionalDependencies:
+      '@types/node': 22.20.0
       fsevents: 2.3.3
       jiti: 2.7.0
       lightningcss: 1.32.0

@@ -48,7 +48,8 @@ const itemVariantsReduced: Variants = {
   visible: { opacity: 1 },
 };
 
-export interface StaggerItemProps extends Omit<React.ComponentProps<'div'>, 'children'> {
+export interface StaggerItemProps
+  extends Omit<React.ComponentProps<typeof motion.div>, 'children' | 'variants'> {
   children: React.ReactNode;
 }
 
