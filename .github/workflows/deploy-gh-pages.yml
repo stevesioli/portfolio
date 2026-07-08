@@ -38,8 +38,7 @@ jobs:
 
       - name: Build
         env:
-          # Replace REPO_NAME if deploying to a project page.
-          VITE_BASE_PATH: /REPO_NAME/
+          VITE_BASE_PATH: /portfolio/
         run: pnpm build
 
       - uses: actions/configure-pages@v5
