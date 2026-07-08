@@ -25,7 +25,20 @@ export const baseConfig = tseslint.config(
     },
     rules: {
       ...reactHooks.configs.recommended.rules,
-      'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
+      'react-refresh/only-export-components': [
+        'warn',
+        {
+          allowConstantExport: true,
+          // shadcn/ui-style component files pair a component with a
+          // `cva(...)`-based variants export (e.g. buttonVariants,
+          // badgeVariants), and context provider files pair a component
+          // with its companion hook (e.g. useTheme). Neither breaks Fast
+          // Refresh in practice — allowlist the known names by pattern
+          // instead of scattering eslint-disable comments through
+          // @resume/ui's component files.
+          allowExportNames: ['buttonVariants', 'badgeVariants', 'useTheme'],
+        },
+      ],
       '@typescript-eslint/no-unused-vars': [
         'warn',
         { argsIgnorePattern: '^_', varsIgnorePattern: '^_' },
