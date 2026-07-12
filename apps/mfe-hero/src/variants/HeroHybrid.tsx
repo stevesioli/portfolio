@@ -12,7 +12,7 @@ import { CORE_TAGS, KICKER, NAME, PULL_QUOTE, SUMMARY } from '../content';
  */
 export default function HeroHybrid() {
   return (
-    <div className="mx-auto max-w-6xl px-6 pt-20 pb-16 sm:pt-28">
+    <div className="mx-auto max-w-6xl px-6 pt-8 pb-16 sm:pt-16">
       <div className="grid items-center gap-12 lg:grid-cols-[1.15fr_1fr]">
         <Reveal>
           <p className="text-primary font-mono text-xs font-medium tracking-[0.2em] uppercase">
@@ -38,7 +38,7 @@ export default function HeroHybrid() {
         </Reveal>
 
         <Reveal direction="left" delay={0.1}>
-          <div className="border-accent-blue/30 bg-radial-[at_bottom_right] from-accent-blue/25 via-accent-blue/5 to-transparent relative rounded-2xl border-l-4 p-8">
+          <div className="border-accent-blue/30 bg-radial-[at_top_right] from-accent-blue/25 via-accent-blue/5 to-transparent relative rounded-2xl border-l-4 p-8">
             {/*
               Floated + shape-outside so the quote text wraps along the
               avatar's circular edge (left side) instead of stopping at
