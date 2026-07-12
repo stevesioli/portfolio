@@ -5,7 +5,7 @@ export type ImpactStatWithIcon = ImpactStat & { icon: LucideIcon };
 
 export const NAME = 'Steve Sioli';
 export const TITLE = 'Staff Frontend Engineer';
-export const KICKER = `Staff Frontend Engineer\nPlatform & UI Architecture`;
+export const KICKER = 'Staff Frontend Engineer Platform & UI Architecture';
 
 export const SUMMARY =
   'Staff Frontend Platform Engineer with 15+ years architecting and building scalable ' +
@@ -16,14 +16,13 @@ export const SUMMARY =
   'accelerate product development.';
 
 /**
- * Short editorial statement used only by the "inline" hero layout
- * variant, standing in for the photo column it frees up. Original
- * copy written to match resume tone — worth a quick read-through
- * before shipping it as a standing personal tagline.
+ * Short editorial statement shown in the hero's pull-quote panel.
+ * Original copy written to match resume tone — worth a quick
+ * read-through before shipping it as a standing personal tagline.
  */
 export const PULL_QUOTE =
-  'I build the platforms other engineers build on top of — component systems, ' +
-  'design systems, and shared architecture that make everyone else faster.';
+  'I build the platforms other engineers build with — component systems, ' +
+  'design systems, and shared architecture — that make everyone else faster.';
 
 export const IMPACT_STATS: ImpactStatWithIcon[] = [
   {
