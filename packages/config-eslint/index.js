@@ -10,7 +10,21 @@ import tseslint from 'typescript-eslint';
  * Each app extends this and layers on project-specific overrides.
  */
 export const baseConfig = tseslint.config(
-  { ignores: ['dist', 'build', '.turbo', 'node_modules', 'public/remotes'] },
+  {
+    ignores: [
+      'dist',
+      'build',
+      '.turbo',
+      'node_modules',
+      'public/remotes',
+      // Module Federation's auto-generated dev/build type-stub
+      // directories (see .gitignore) — never hand-written, and their
+      // generated `any`/`import()` types trip rules meant for our own
+      // source.
+      '**/@mf-types',
+      '**/.mf',
+    ],
+  },
   js.configs.recommended,
   ...tseslint.configs.recommended,
   {

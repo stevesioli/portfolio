@@ -16,7 +16,7 @@ import { useIsStuck } from './layout/use-is-stuck';
 
 export function App() {
   const summaryRef = useRef<HTMLElement>(null);
-  const isSummaryStuck = useIsStuck(summaryRef, 64);
+  useIsStuck(summaryRef, 64);
 
   return (
     <ThemeProvider>
@@ -40,7 +40,7 @@ export function App() {
             ref={summaryRef}
             id="summary"
             style={{ zIndex: 0 }}
-            className={`bg-background [scrollbar-width:none] sticky top-16 h-[calc(100dvh-4rem)] scroll-mt-24 [&::-webkit-scrollbar]:hidden ${isSummaryStuck ? 'overflow-y-auto' : 'overflow-hidden'}`}
+            className="bg-background [scrollbar-width:none] sticky top-16 h-[calc(100dvh-4rem)] overflow-hidden scroll-mt-24 [&::-webkit-scrollbar]:hidden"
           >
             <RemoteBoundary label="Summary">
               <HeroSection />

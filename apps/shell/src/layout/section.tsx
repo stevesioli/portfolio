@@ -52,14 +52,14 @@ interface SectionProps {
  */
 export function Section({ id, kicker, title, children, className, stackIndex }: SectionProps) {
   const ref = useRef<HTMLElement>(null);
-  const isStuck = useIsStuck(ref, 64);
+  useIsStuck(ref, 64);
 
   return (
     <section
       ref={ref}
       id={id}
       style={{ zIndex: stackIndex }}
-      className={`[scrollbar-width:none] sticky top-16 h-[calc(100dvh-4rem)] scroll-mt-24 py-20 shadow-[0_-24px_48px_-24px_rgba(0,0,0,0.35)] [&::-webkit-scrollbar]:hidden sm:py-28 ${isStuck ? 'overflow-y-auto' : 'overflow-hidden'} ${className ?? ''}`}
+      className={`[scrollbar-width:none] sticky top-16 h-[calc(100dvh-4rem)] overflow-hidden scroll-mt-24 pt-20 pb-48 shadow-[0_-24px_48px_-24px_rgba(0,0,0,0.35)] [&::-webkit-scrollbar]:hidden sm:py-28 ${className ?? ''}`}
     >
       <div className="mx-auto max-w-6xl px-6">
         <Reveal className="mb-10 sm:mb-14">
