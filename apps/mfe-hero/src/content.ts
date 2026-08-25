@@ -1,19 +1,25 @@
-import { ClockIcon, GaugeIcon, GlobeIcon, TrendingDownIcon, type LucideIcon } from 'lucide-react';
+import {
+  ClockIcon,
+  GaugeIcon,
+  TrendingDownIcon,
+  UsersIcon,
+  type LucideIcon,
+} from 'lucide-react';
 import type { ImpactStat } from '@resume/ui';
 
 export type ImpactStatWithIcon = ImpactStat & { icon: LucideIcon };
 
 export const NAME = 'Steve Sioli';
-export const TITLE = 'Staff Frontend Engineer';
-export const KICKER = 'Staff Frontend Engineer Platform & UI Architecture';
+export const TITLE = 'Staff Engineer, Front-End';
+export const KICKER = 'Staff Engineer, Front-End — Platform & UI Architecture';
 
 export const SUMMARY =
-  'Staff Frontend Platform Engineer with 15+ years architecting and building scalable ' +
-  'frontend platforms and UI ecosystems across enterprise and high-scale environments. ' +
-  'Known for designing reusable component systems, improving developer velocity, and ' +
-  'delivering performant React and TypeScript applications — and for building ' +
-  'multi-tenant platforms, unified design systems, and shared component libraries that ' +
-  'accelerate product development.';
+  'Staff Frontend Platform Engineer with 15+ years of experience architecting and building ' +
+  'scalable frontend platforms and UI ecosystems across enterprise and high-scale ' +
+  'environments. Known for designing reusable component systems, improving developer ' +
+  'velocity, and delivering performant React and TypeScript applications. Proven leader in ' +
+  'building multi-tenant platforms, unified design systems, and shared component libraries ' +
+  'that accelerate product development and improve quality.';
 
 /**
  * Short editorial statement shown in the hero's pull-quote panel.
@@ -48,11 +54,11 @@ export const IMPACT_STATS: ImpactStatWithIcon[] = [
     description: 'Re-architected a legacy vehicle locator into a single-page application.',
   },
   {
-    value: 275,
-    suffix: '+',
-    icon: GlobeIcon,
-    label: 'global brand sites supported',
-    description: 'Contributed to the CMS platform architecture powering GM’s global brand portfolio.',
+    value: 2,
+    suffix: '.5M+',
+    icon: UsersIcon,
+    label: 'active sellers worldwide',
+    description: 'Unified Seller and Vendor Central experiences on Amazon’s next-gen promotions platform.',
   },
 ];
 
