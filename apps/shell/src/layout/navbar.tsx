@@ -48,7 +48,7 @@ export function Navbar() {
         <a href="#summary" className="flex flex-col leading-none">
           <span className="font-serif text-base font-semibold tracking-tight">Steve Sioli</span>
           <span className="text-muted-foreground text-[11px] tracking-wide uppercase">
-            Staff Frontend Engineer
+            Staff Engineer, Front-End
           </span>
         </a>
 
@@ -59,7 +59,7 @@ export function Navbar() {
         <div className="hidden items-center gap-2 md:flex">
           <ThemeToggle />
           <Button asChild size="sm">
-            <a href="resume/steve-sioli-resume.pdf" download>
+            <a href="resume/steve-sioli-resume-2026.pdf" download>
               <DownloadIcon className="size-4" />
               Résumé
             </a>
@@ -83,7 +83,7 @@ export function Navbar() {
               </nav>
               <div className="mt-auto px-4 pb-4">
                 <Button asChild className="w-full">
-                  <a href="resume/steve-sioli-resume.pdf" download>
+                  <a href="resume/steve-sioli-resume-2026.pdf" download>
                     <DownloadIcon className="size-4" />
                     Download résumé
                   </a>
