@@ -27,7 +27,7 @@ const EARLY_CAREER: EarlyCareerEntry[] = [
   {
     id: 'trellist',
     role: 'Senior Associate / Web Development Leadership',
-    company: 'Trellist, Inc.',
+    company: 'Trellist Marketing & Technology',
     years: '2010 – 2014',
   },
   {
